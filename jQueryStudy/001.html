@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Home - Maopy</title>
+	<link rel="stylesheet" href="../css/reset.css"/>
+	<link rel="stylesheet" href="../css/layout.css"/>
+	<link rel="stylesheet" href="../css/typography.css"/>
+	<link rel="stylesheet" href="../css/blog.css"/>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+<header>
+	<div class="wrap">
+		<h1><a href="../index.html">MAOPY</a></h1>
+		<nav>
+			<ul>
+				<li><a href="../index.html">主页</a></li>
+				<li><a href="../blog.html">博客</a></li>
+				<li><a href="###">留言</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+<section id="main">
+	<pre>
+	前言：感谢《犀利开发——jQuery内核详解与实战》作者。博文基于此书，针对最新版本jQuery进行完善。
+	</pre>
+	<artical>
+		<h1>001 起源——原型继承</h1>
+		<p>
+			用过JavaScript的读者都会明白，在JavaScript脚本中到处都是函数，函数可以归置代码段，把相对独立的功能封装在一个函数包中。函数也可以实现类，这个类是面向对象编程中最基本的概念，也是最高抽象，定义一个类就相当于制作了一个模型，然后借助这个模型复制无数的实例。
+		</p>
+		<p>
+			例如，下面的代码就可以定义最初的jQuery类，类名就是jQuery，你可以把它视为一个函数，函数名是jQuery。当然，你也可以把它视为一个对象，对象名是jQuery。与其他面向对象的编程语言相比，JavaScript对于这些概念的界定好像很随意，这降低了编程的门槛，反之也降低了JavaScript作为编程语言的层次。
+		</p>
+		<code>&lt;script&gt;
+  var jQuery = function () {
+    //函数体
+  }
+&lt;/script&gt;</code>
+		<p>
+			上面创建了一个空的函数，好像什么都不能够做，这个函数实际上就是所谓的构造函数。构造函数在面向对象语言中是类的一个特殊方法，用来创建类。在JavaScript中，你可以把任何函数都视为构造函数，这没有什么不可以的，这样不会伤害代码本身。
+		</p>
+		<p>
+			所有类都有最基本的功能，如继承、派生和重写等。JavaScript很奇特，它通过为所有函数绑定一个prototype属性，由这个属性指向一个原型对象，原型对象中可以定义类的继承属性和方法等。所以，对于上面的空类，可以继续扩展原型，其代码如下：
+		</p>
+		<code>&lt;script&gt;
+  var jQuery = function () {}
+  jQuery.prototype = {
+    //扩展的原型对象
+  }
+&lt;/script&gt;</code>
+		<p>
+			原型对象是JavaScript实现继承的基本机制。如果你觉得jQuery.prototype名称太长，没有关系，我们可以为其重新命名，如fn，当然你可以随便命名。如果直接命名fn，则表示该名称属于Window对象，即全局变量名。更安全的方法是为jQuery类定义一个公共属性jQuery.fn，然后把jQuery的原型对象传递给这个公共属性，实现代码如下。
+		</p>
+		<code>&lt;script&gt;
+  var jQuery = function () {}
+  jQuery.fn = jQuery.prototype = {
+    //扩展的原型对象
+  }
+&lt;/script&gt;</code>
+		<p>
+			这里的jQuery.fn相当于jQuery.prototype的别名，方便以后使用，它们指向同一个引用。因此若要调用jQuery的原型方法，直接使用jQuery.fn公共属性即可，不需要直接引用jQuery.prototype，当然直接使用jQuery.prototype也是可以的。
+		</p>
+		<p>
+			既然原型对象可以使用别名，jQuery类也可以起个别名，我们可以使用$符合来引用它，代码如下。
+		</p>
+		<code>var $ = jQuery = function () {}</code>
+		<p>
+			现在模仿jQuery框架源码，给它添加两个成员，一个是原型属性jquery ,一个是原型方法size()，其代码如下。
+		</p>
+		<code>&lt;script&gt;
+  var $ = jQuery = function () {}
+  jQuery.fn = jQuery.prototype = {
+    jquery : "1.10.2",  //原型属性
+    size : function () {  //原型方法
+      return this.length;
+    }
+  }
+&lt;/script&gt;</code>
+	</artical>
+</section>
+</body>
+</html>

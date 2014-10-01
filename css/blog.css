@@ -1,0 +1,42 @@
+code {
+	width: 60%;
+	white-space: pre;
+	background: lightgrey;
+	display: block;
+	margin: 20px;
+	padding: 10px;
+}
+#main {
+	width: 960px;
+	height: 1600px;
+	margin: 0 auto;
+}
+#main pre {
+	position: relative;
+	top: 100px;
+	text-align: left;
+}
+#main h1 {
+	margin: 100px 0 40px 0;
+	font-size: 2em;
+}
+#main ol {
+	width: 600px;
+}
+#main ol li {
+	line-height: 2em;
+	text-indent: 20px;
+}
+#main a.art span {
+	font-size: 1.1em;
+	color: purple;
+	font-weight: bold;
+}
+#main p {
+	text-indent: 32px;
+}
+#main a.art span.date {
+	font-size: 1em;
+	color: gray;
+	float: right;
+}

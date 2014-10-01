@@ -1,0 +1,232 @@
+aside {
+	width: 300px;
+	margin: 200px 20px 0 0;
+	float: left;
+	font-size: 1.1em;
+}
+dl.accordion {
+	width: 300px;
+	margin: 20px 0 10px 0;
+}
+dl.accordion dt {
+	background: #E8EAEA;
+	border-bottom: 1px solid #ebeeef;
+	color: #1ABC9C;
+	padding: 0 10px;
+	line-height: 43px;
+	height: 46px;
+	cursor: pointer;
+	font-weight: bold;
+}
+dl.accordion dd {
+	background: #E8EAEA;
+	padding: 10px;
+}
+dl.accordion dt .icon {
+	display: inline-block;
+	width: 26px;
+	height: 26px;
+	vertical-align: middle;
+	background: url("../images/sprite2.png") no-repeat -120px -200px;
+}
+dl.accordion dt .compare {
+	background-position: -120px -360px;
+}
+dl.accordion dt .detail {
+	background-position: -120px -240px;
+}
+dl.accordion dt .count {
+	width: 40px;
+	height: 21px;
+	line-height: 21px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	background: #1ABC9C;
+	color: #ECF0F1;
+	float: right;
+	margin: 12px 5px 0 0;
+	text-align: center;
+}
+#compare dl dd table {
+	width: 280px;
+}
+#compare dl dd table tr td {
+	padding: 5px;
+	line-height: 30px;
+}
+#compare dl dd select {
+	width: 100px;
+}
+dl.accordion dd ul li {
+	clear: both;
+	line-height: 30px;
+}
+dl.accordion select {
+	font-size: 1.05em;
+	font-family: "微软雅黑";
+}
+dl.accordion dd ul li select {
+	width: 150px;
+}
+aside form .button {
+	background: #1ABC9C;
+	padding: 6px 50px 6px 60px;
+	letter-spacing: 20px;
+	color: #ECF0F1;
+	font-size: 1.1em;
+	font-family: "微软雅黑";
+	-webkit-transition: 0.25s;
+	-moz-transition: 0.25s;
+	-ms-transition: 0.25s;
+	transition: 0.25s;
+	border: 0;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	cursor: pointer;
+}
+aside form .button:hover {
+	background-color: #2fe2bf;
+}
+
+article {
+	width: 950px;
+	float: right;
+}
+#sortBy {
+	margin: 60px 0 0 0;
+	width: 300px;
+	height: 35px;
+	background-color: #ECF0F1;
+	color: #ECF0F1;
+	float: right;
+	border: 2px solid #1ABC9C;
+	border-width: 2px 0 2px 2px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	position: relative;
+}
+#sortBy #sortBySelector {
+	display: block;
+	width: 150px;
+	height: 35px;
+	line-height: 33px;
+	text-indent: 10px;
+	font-size: 1.1em;
+}
+#sortBy ul {
+	background-color: #ECF0F1;
+	border: 2px solid #1ABC9C;
+	padding: 2px 0;
+	width: 228px;
+	z-index: 1;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	position: absolute;
+	left: -2px;
+	top: 40px;
+	display: none;
+}
+#sortBy ul li {
+	padding: 2px 4px;
+}
+#sortBy .asc,
+#sortBy .desc {
+	vertical-align: top;
+	width: 45px;
+	height: 39px;
+	overflow: hidden;
+	text-indent: -9999px;
+	margin: -2px 0;
+	border: 0;
+	position: absolute;
+	cursor: pointer;
+}
+#sortBy input.asc {
+	background: #1ABC9C url("../images/sprite.png") no-repeat -50px -153px;
+	-webkit-border-radius: 0 4px 4px 0;
+	-moz-border-radius: 0 4px 4px 0;
+	border-radius: 0 4px 4px 0;
+	right: 0;
+	top: 0;
+}
+#sortBy input.desc {
+	background: #1ABC9C url("../images/sprite.png") no-repeat -50px -53px;
+	right: 45px;
+	top: 0;
+}
+article h1 {
+	line-height: 80px;
+	height: 80px;
+	font-size: 3.2em;
+	margin: 20px 0;
+	vertical-align: top;
+	float: left;
+}
+article h1 img {
+	width: 80px;
+	height: 80px;
+	-webkit-border-radius: 40px;
+	-moz-border-radius: 40px;
+	border-radius: 40px;
+	background: #1ABC9C;
+	margin: 0 10px 0 0;
+}
+article table {
+	clear: both;
+	border-collapse: collapse;
+	width: 100%;
+	border: 0;
+}
+article table thead tr th {
+	background: #DEE8E8;
+	padding: 5px;
+	text-align: left;
+	line-height: 35px;
+	border-bottom: 2px solid #1ABC9C;
+}
+article table thead tr th.col-checkbox {
+	width: 30px;
+}
+article table thead tr th.col-pos {
+	width: 40px;
+}
+article table thead tr th.col-avatar {
+	width: 50px;
+}
+article table thead tr th.col-overall {
+	width: 45px;
+}
+article table thead tr th.col-name {
+	width: 310px;
+}
+article table thead tr th.col-age {
+	width: 35px;
+}
+article table thead tr th.col-height {
+	width: 50px;
+}
+article table thead tr th.col-weight {
+	width: 50px;
+}
+.player-check {
+	margin-left: 15px;
+}
+.list-avatar {
+	width: 50px;
+	height: 50px;
+	-webkit-border-radius: 35px;
+	-moz-border-radius: 35px;
+	border-radius: 35px;
+	padding: 3px;
+}
+.player-age,
+.player-weight {
+	margin-left: 10px;
+}
+.player-height {
+	margin-left: 5px;
+}

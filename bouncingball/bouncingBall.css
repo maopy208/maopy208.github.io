@@ -1,0 +1,74 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	width: 900px;
+	margin: 0 auto;
+	overflow: scroll;
+	font-family: "Microsoft JhengHei UI", "微软雅黑";
+	letter-spacing: 2px;
+	position: relative;
+}
+hgroup {
+	float: left;
+	width: 260px;
+	margin: 30px 0 0 30px;
+}
+h1 {
+	font-size: 32px;
+	margin-bottom: 10px;
+}
+h2 {
+	font-size: 22px;
+	padding-top: 10px;
+}
+h3 {
+	margin-bottom: 40px;
+	font-weight: normal;
+}
+a {
+	text-decoration: none;
+}
+a:link,
+a:visited {
+	color: #329999;
+}
+a:hover {
+	color: #80007f;
+}
+
+#ballContainer {
+	float: right;
+	width: 600px;
+}
+#ball {
+	height: 120px;
+	width: 120px;
+	background-color: #329999;
+	margin: 0 auto;
+	cursor: pointer;
+	border-radius: 50%;
+
+	-webkit-animation: bounce 4s infinite;
+}
+
+@-webkit-keyframes bounce {
+	0% {margin-top: 0px; -webkit-animation-timing-function: ease-in;}
+	49% {width: 120px;}
+	50% {margin-top: 500px; width: 135px; -webkit-animation-timing-function: ease-out;}
+	51% {width: 120px;}
+	100% {margin-top: 0px; -webkit-animation-timing-function: ease-in;}
+}
+
+#messageContainer {
+	display: none;
+	position: absolute;
+	left: 300px;
+	width: 600px;
+	padding-top: 300px;
+	text-align: center;
+}
+#replay {
+	display: none;
+}

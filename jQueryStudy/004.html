@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Home - Maopy</title>
+	<link rel="stylesheet" href="../css/reset.css"/>
+	<link rel="stylesheet" href="../css/layout.css"/>
+	<link rel="stylesheet" href="../css/typography.css"/>
+	<link rel="stylesheet" href="../css/blog.css"/>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+<header>
+	<div class="wrap">
+		<h1><a href="../index.html">MAOPY</a></h1>
+		<nav>
+			<ul>
+				<li><a href="../index.html">主页</a></li>
+				<li><a href="../blog.html">博客</a></li>
+				<li><a href="###">留言</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+<section id="main">
+	<artical>
+		<h1>004 生长——跨域访问</h1>
+		<p>
+			如何能做到既能够分隔初始化构造函数与jQuery原型对象的作用域，又能够在返回实例中访问jQuery原型对象呢？
+		</p>
+		<p>
+			jQuery框架巧妙地通过原型传递解决了这个问题，它把jQuery.fn传递给jQuery.fn.init.prototype，也就是说用jQuery的原型对象覆盖init构造器的原型对象，从而实现跨域访问，其代码如下所示。
+		</p>
+<code>&lt;script>
+  var	$ = jQuery = function () {
+    return new jQuery.fn.init();
+  };
+  jQuery.fn = jQuery.prototype = {
+    init : function () {
+      this.length = 0;
+      this.test = function () {
+        return this.length;
+      }
+      return this;
+    },
+    jquery : "1.10.2",
+    length : 1,
+    size : function () {
+      return this.length;
+    }
+  }
+  jQuery.fn.init.prototype = jQuery.fn;  //使用jQuery的原型对象覆盖init的原型对象
+  alert($().jquery);  //返回”1.10.2”
+  alert($().test());  //返回0
+  alert($().size());  //返回0
+&lt;/script></code>
+		<p>
+			这是一招妙棋，new jQuery.fn.init()创建的新对象拥有init构造器的prototype原型对象的方法，通过改变prototype指针的指向，使其指向jQuery类的prototype，这样创建出来的对象就继承了jQuery.fn原型对象定义的方法。
+		</p>
+	</artical>
+</section>
+</body>
+</html>

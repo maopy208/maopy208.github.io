@@ -1,0 +1,83 @@
+body {
+	width: 520px;
+	margin: 0 auto;
+}
+#box2 {
+	width: 520px;
+	height: 280px;
+	float: left;
+	position: relative;
+	overflow: hidden;
+}
+#innerBox {
+	width: 3120px;
+	height: 280px;
+	position: absolute;
+}
+#innerBox a {
+	float: left;
+}
+
+#cbox {
+	width: 520px;
+	position: relative;
+}
+#cbox .switch-block {
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	position: absolute;
+	top: 120px;
+	background: rgba(0, 0, 0, .3);
+	display: none;
+}
+#cbox .switch-block:hover {
+	background: rgba(0, 0, 0, .6);
+}
+#cbox .switch-block i {
+	width: 20px;
+	height: 20px;
+	display: block;
+	margin: 10px 0 0 12px;
+}
+#Jprev {
+	left: 0;
+}
+#Jprev i {
+	background: url("images/tarrow.png") no-repeat left top;
+}
+#Jnext {
+	right: 0;
+}
+#Jnext i {
+	background: url("images/tarrow.png") no-repeat left -24px;
+}
+#Jnav {
+	width: 67px;
+	height: 13px;
+	background: rgba(255, 255, 255, .3);
+	position: absolute;
+	top: 250px;
+	left: 225px;
+	text-align: center;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+#Jnav li {
+	float: left;
+	vertical-align: middle;
+	margin: 2px;
+}
+#Jnav li a {
+	display: block;
+	width: 9px;
+	height: 9px;
+	background: #b7b7b7;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+}
+#Jnav li.selected a {
+	background: #f40;
+}

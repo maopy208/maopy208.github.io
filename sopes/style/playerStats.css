@@ -1,0 +1,127 @@
+article#playerStatsArticle {
+	width: 1000px;
+	margin: 0 0 0 100px;
+}
+article#playerStatsArticle > header {
+	height: 120px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #BDC3C7;
+}
+article#playerStatsArticle header img#avatar {
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	border-radius: 100px;
+	background: #1ABC9C;
+	margin: 20px 20px 0;
+	float: left;
+}
+article#playerStatsArticle header h1 {
+	float: left;
+	font-size: 2.6em;
+	color: #2C3E50;
+	line-height: 100px;
+	padding: 20px 0 0 20px;
+}
+article section {
+	margin-top: 30px;
+}
+#basicInfo {
+	font-family: "Arial", "微软雅黑";
+	font-size: 1.1em;
+	line-height: 1.4em;
+}
+li#nation span {
+	background: url("../images/nations.png") no-repeat;
+	padding: 0 0 0 24px;
+	margin: 2px 0;
+	display: inline-block;
+	height: 22px;
+}
+li#nation span.n01 {
+	background-position: 0 -4732px !important;
+}
+li#pos {
+	margin: 4px 0 4px -4px;
+}
+section.team-info-section {
+	width: 420px;
+	height: 250px;
+	border: 1px solid #BDC3C7;
+	float: left;
+	margin: 10px 10px 0 0;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+section.team-info-section img.team-logo {
+	width: 90px;
+	height: 90px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	border-radius: 100px;
+	display: block;
+	float: left;
+	margin: 10px;
+	background: #DEDEDE;
+}
+section.team-info-section h2.team-name {
+	font-size: 1.2em;
+	width: 96%;
+	color: #1ABC9C;
+	margin-left: 10px;
+	padding-bottom: 6px;
+	float: left;
+	clear: left;
+	border-bottom: 1px solid #BDC3C7;
+}
+section.team-info-section div.overall {
+	float: right;
+}
+section.team-info-section ul {
+	clear: both;
+	margin: 10px;
+	padding-top: 6px;
+}
+#playerStatsArticle section ul li {
+	height: 1.6em;
+}
+section.team-info-section ul li span {
+	float: right;
+}
+#basicAbility {
+	clear: both;
+}
+section.player-ability {
+	width: 420px;
+	margin: 0 10px 0 0;
+	padding: 10px 0;
+	float: left;
+}
+#playerStatsArticle section.player-ability h2,
+#playerCard h2 {
+	color: #2C3E50;
+	height: 40px;
+	line-height: 1.6em;
+}
+section.player-ability ul li span {
+	margin-right: 40px;
+}
+section.player-ability ul li span.single {
+	margin-right: 50px;
+}
+#playerCard {
+	width: 420px;
+	clear: both;
+	float: left;
+	margin-right: 10px;
+}
+#playerCard ul li span {
+	margin-right: 30px;
+}
+#activePos {
+	display: block;
+	float: left;
+	margin-top: -120px;
+}
+
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Home - Maopy</title>
+	<link rel="stylesheet" href="../css/reset.css"/>
+	<link rel="stylesheet" href="../css/layout.css"/>
+	<link rel="stylesheet" href="../css/typography.css"/>
+	<link rel="stylesheet" href="../css/blog.css"/>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+<header>
+	<div class="wrap">
+		<h1><a href="../index.html">MAOPY</a></h1>
+		<nav>
+			<ul>
+				<li><a href="../index.html">主页</a></li>
+				<li><a href="../blog.html">博客</a></li>
+				<li><a href="###">留言</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+<section id="main">
+	<artical>
+		<h1>003 学步——分隔作用域</h1>
+		<p>
+			我们已经初步实现了让jQuery()函数能够返回jQuery类的实例，下面继续思考：init()方法返回的是this关键字，该关键字引用的是jQuery类的实例，如果在init()函数中继续使用this关键字，也就是说，假设我们把init()函数也视为一个构造器，则其中的this该如何理解和处理？
+		</p>
+		<p>
+			例如，在下面的示例中，jQuery原型对象中包含一个length属性，同时init()从一个普通的函数转身变成了构造器，它也包含一个length属性和一个test()方法。运行该示例，我们可以看到，this关键字引用了init()函数作用域所在的对象，此时它访问length属性时，返回0。而this关键字也能够访问上一级对象jQuery.fn对象的作用域，所有$().jquery返回”1.10.2”。但是调用$().size()方法时，返回的是0，而不是1。
+		</p>
+<code>&lt;script>
+  var	$ = jQuery = function () {
+    return jQuery.fn.init();
+  };
+  jQuery.fn = jQuery.prototype = {
+    init : function () {
+      this.length = 0;
+      this.test = function () {
+        return this.length;
+      }
+      return this;
+    },
+    jquery : "1.10.2",
+    length : 1,
+    size : function () {
+      return this.length;
+    }
+  }
+  alert($().jquery);  //调用属性，返回”1.10.2”
+  alert($().test());  //返回0
+  alert($().size());  //返回0
+&lt;/script></code>
+		<p>
+			这种设计思路很容易破坏作用域的独立性，对于jQuery这样的框架来说，很可能会造成消极影响。因此，我们可以看到jQuery框架是通过下面的方式调用init()初始化构造函数的。
+		</p>
+<code>&lt;script>
+  var	$ = jQuery = function () {
+    return new jQuery.fn.init();  //实例化init初始化类型，分隔作用域
+  };
+&lt;/script></code>
+		<p>
+			这样就可以把init()构造器中的this和jQuery.fn对象中的this关键字隔离开来，避免相互混淆。但是，这种方式也会带来另一个问题：无法访问jQuery.fn对象的属性或方法。例如，在下面的示例中，访问jQuery.fn原型对象的jquery属性和size()方法时就会出现这个问题。
+		</p>
+<code>&lt;script>
+  var	$ = jQuery = function () {
+    return new jQuery.fn.init();
+  };
+  jQuery.fn = jQuery.prototype = {
+    init : function () {
+      this.length = 0;
+      this.test = function () {
+        return this.length;
+      }
+      return this;
+    },
+    jquery : "1.10.2",
+    length : 1,
+    size : function () {
+      return this.length;
+    }
+  }
+  alert($().jquery);  //返回undefined
+  alert($().test());  //返回0
+  alert($().size());  //抛出异常
+&lt;/script></code>
+	</artical>
+</section>
+</body>
+</html>

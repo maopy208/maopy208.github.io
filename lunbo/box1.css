@@ -1,0 +1,36 @@
+#box1 {
+	width: 700px;
+	height: 120px;
+	position: relative;
+}
+#box1 .arrow {
+	width: 14px;
+	height: 31px;
+	background: url("images/arrow.png") no-repeat left center;
+	position: absolute;
+	top: 50%;
+	margin-top: -7px;
+	cursor: pointer;
+	opacity: 0.6;
+}
+#box1 .arrow:hover {
+	opacity: 1;
+}
+#box1 #aRight {
+	background: url("images/arrow.png") no-repeat right center;
+	right: 0;
+}
+#innerBox {
+	margin: 0 0 0 20px;
+}
+#innerBox ul {
+	opacity: 0;
+}
+#innerBox ul li {
+	width: 165px;
+	height: 120px;
+	float: left;
+}
+#innerBox .banner {
+	 position: absolute;
+}

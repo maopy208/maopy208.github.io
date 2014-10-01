@@ -1,0 +1,600 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="keywords" content="Gareth Bale,Lionel Messi,Neymar da Silva Santos Jr.,C. Ronaldo dos Santos Aveiro,Marco Reus,Stephan El Shaarawy,Zlatan Ibrahimović,Robert Lewandowski,Thierry Henry,Mesut Özil,Mario Balotelli,İlkay Gündoğan,Fernando José Torres Sanz,Wayne Rooney,Erik Lamela,Radamel Falcao García Zarate,Edinson Cavani,Sergio Agüero,Willian Borges da Silva,Didier Drogba,Samuel Eto'o,Francesc Fàbregas i Soler,Paul Pogba,Eden Hazard,Marouane Fellaini,Robin van Persie,Mario Götze,Andrés Iniesta Luján,Stevan Jovetić,Arjen Robben,Luis Suárez,Franck Ribéry,Aaron Ramsey,Karim Benzema,Theo Walcott,Steven Gerrard"/>
+	<link rel="stylesheet" href="style/global.css"/>
+	<link rel="stylesheet" href="style/player.css"/>
+	<script src="script/global.js"></script>
+	<title>PES2014 Weekly - SoPES - Online PES DB Searching</title>
+</head>
+<body>
+
+<header id="mainHeader">
+	<img id="logo" src="images/logo.png" alt="logo"/>
+	<div class="lang-holder">
+		<a href="#" class="lang-selector lang-1">中文（简体）</a>
+		<a id="langToggle" class="lang-toggle" href="#"></a>
+		<ul id="langOptions" class="lang-options">
+			<li>
+				<a href="#" class="lang-1">中文（简体）</a>
+			</li>
+			<li>
+				<a href="#" class="lang-2">English</a>
+			</li>
+		</ul>
+	</div>
+</header>
+<nav>
+	<div class="menu-holder">
+		<a href="#" class="menu-selector lang-1">PES 2014 每周更新</a>
+		<a id="menuToggle" class="menu-toggle" href="#"></a>
+		<ul id="menuOptions" class="menu-options">
+			<li>
+				<a href="#" class="lang-1">PES 2014 每周更新 <em>2013 年 9 月 30 日</em></a>
+			</li>
+			<li>
+				<a href="#" class="lang-2">PES 2014 原版 <em>2013年 9 月 17 日</em></a>
+			</li>
+		</ul>
+	</div>
+	<ul class="main-menu">
+		<li><a class="" href="#">国家/地区</a></li>
+		<li><a class="" href="#">联赛</a></li>
+		<li><a class="" href="#">俱乐部</a></li>
+		<li><a class="" href="#">国家队</a></li>
+		<li><a class="current" href="#">球员</a></li>
+		<li><a class="" href="#">球场</a></li>
+		<li><a class="" href="#">实况爱好者联盟</a></li>
+	</ul>
+	<form action="#" id="playerSearchForm" accept-charset="utf-8">
+		<input type="text" name="keyword" value="" id="playerSearchKeyword" class="left-half" placeholder="按球员名搜索"/>
+		<input type="submit" name="submit" value="搜索" id="playerSearchSubmit" class="right-half"/>
+	</form>
+</nav>
+<aside>
+	<div id="compare">
+		<dl class="accordion">
+			<dt>
+				<span class="icon compare"></span>
+				<span>球员对比</span>
+				<span id="comparePlayerCnt" class="count">0</span>
+			</dt>
+			<dd>
+				<table>
+					<tbody>
+					<tr>
+						<td colspan="3">
+							<select name="position" id="goCompare" class="right">
+								<option value="0">---</option>
+								<option value="1">GK</option>
+								<option value="2">SWP</option>
+								<option value="3">CB</option>
+								<option value="4">LB</option>
+								<option value="5">RB</option>
+								<option value="6">DMF</option>
+								<option value="7">CMF</option>
+								<option value="8">LMF</option>
+								<option value="9">RMF</option>
+								<option value="10">AMF</option>
+								<option value="11">LWF</option>
+								<option value="12">RWF</option>
+								<option value="13">SS</option>
+								<option value="14">CF</option>
+							</select>
+							位置
+						</td>
+					</tr>
+					</tbody>
+				</table>
+			</dd>
+		</dl>
+	</div>
+	<form action="#" accept-charset="utf-8">
+		<dl class="accordion">
+			<dt>
+				<span class="icon detail"></span>
+				<span>详细</span>
+				<span class="count">0</span>
+			</dt>
+			<dd>
+				<ul>
+					<li>
+						<label for="">国籍</label>
+						<select name="nation" id="" class="right">
+							<option value="0">---</option>
+							<option value="1">巴西</option>
+							<option value="2">德国</option>
+							<option value="3">意大利</option>
+							<option value="4">西班牙</option>
+							<option value="5">法国</option>
+							<option value="6">英格兰</option>
+							<option value="7">中国</option>
+							<option value="8">葡萄牙</option>
+							<option value="9">比利时</option>
+							<option value="10">荷兰</option>
+							<option value="11">乌拉圭</option>
+							<option value="12">阿根廷</option>
+							<option value="13">俄罗斯</option>
+							<option value="14">瑞士</option>
+							<option value="15">墨西哥</option>
+							<option value="16">科特迪瓦</option>
+							<option value="17">捷克共和国</option>
+							<option value="18">喀麦隆</option>
+							<option value="19">瑞典</option>
+							<option value="20">智利</option>
+						</select>
+					</li>
+					<li>
+						<label for="">联赛</label>
+						<select name="league" id="" class="right">
+							<option value="0">---</option>
+							<option value="1">英格兰足球超级联赛</option>
+							<option value="2">巴西足球甲级联赛</option>
+							<option value="3">法国足球甲级联赛</option>
+							<option value="4">荷兰足球甲级联赛</option>
+							<option value="5">德国足球甲级联赛</option>
+							<option value="6">意大利足球甲级联赛</option>
+							<option value="7">西班牙足球甲级联赛</option>
+							<option value="8">葡萄牙足球超级联赛</option>
+						</select>
+					</li>
+					<li>
+						<label for="">球队</label>
+						<select name="team" id="" class="right">
+							<option value="0">---</option>
+						</select>
+					</li>
+					<li>
+						<label for="">年龄</label>
+						<span class="right">
+							<input type="text" class="digital" maxlength="2"/>
+							~
+							<input type="text" class="digital" maxlength="2"/>
+						</span>
+					</li>
+					<li>
+						<label for="">身高（厘米）</label>
+						<span class="right">
+							<input type="text" class="digital" maxlength="3"/>
+							~
+							<input type="text" class="digital" maxlength="3"/>
+						</span>
+					</li>
+					<li>
+						<label for="">体重（公斤）</label>
+						<span class="right">
+							<input type="text" class="digital" maxlength="3"/>
+							~
+							<input type="text" class="digital" maxlength="3"/>
+						</span>
+					</li>
+					<li>
+						<label for="">惯用脚</label>
+						<span class="right">
+							<input type="radio" name="usageFoot" id="useLeftFoot" value="1"/>
+							<label for="useLeftFoot">左脚</label>
+							<input type="radio" name="usageFoot" id="useRightFoot" value="2"/>
+							<label for="useRightFoot">右脚</label>
+						</span>
+					</li>
+					<li>
+						<label for="">位置</label>
+						<select name="position" id="goCompare" class="right">
+							<option value="0">---</option>
+							<option value="1">GK</option>
+							<option value="2">SWP</option>
+							<option value="3">CB</option>
+							<option value="4">LB</option>
+							<option value="5">RB</option>
+							<option value="6">DMF</option>
+							<option value="7">CMF</option>
+							<option value="8">LMF</option>
+							<option value="9">RMF</option>
+							<option value="10">AMF</option>
+							<option value="11">LWF</option>
+							<option value="12">RWF</option>
+							<option value="13">SS</option>
+							<option value="14">CF</option>
+						</select>
+					</li>
+					<li>
+						<label for="">擅长位置</label>
+						<span class="right">
+							<input type="checkbox" name="favor" value="1" id="favor1" checked disabled/>
+							<label for="favor1">注册 </label>
+							<input type="checkbox" name="favor" value="2" id="favor2"/>
+							<label for="favor2">非注册</label>
+						</span>
+					</li>
+					<li>
+						<label for="">擅长位置能力</label>
+						<span class="right">
+							<input type="text" class="digital" maxlength="3"/>
+							~
+							<input type="text" class="digital" maxlength="3"/>
+						</span>
+					</li>
+				</ul>
+			</dd>
+		</dl>
+		<input type="submit" name="submit" value="搜索" class="button"/>
+	</form>
+</aside>
+<article>
+	<h1>
+		<img src="images/player.png" alt="#"/>
+		球员
+	</h1>
+	<form action="#" accept-charset="utf-8">
+		<div id="sortBy">
+			<a href="#" id="sortBySelector">擅长位置能力</a>
+			<ul>
+				<li><a href="#">擅长位置能力</a></li>
+				<li><a href="#">身高</a></li>
+				<li><a href="#">体重</a></li>
+			</ul>
+			<input type="submit" name="asc" class="sort asc"/>
+			<input type="submit" name="desc" class="sort desc"/>
+		</div>
+	</form>
+	<table>
+		<thead>
+		<tr>
+			<th class="col-checkbox"></th>
+			<th class="col-pos" title="擅长位置">位置</th>
+			<th class="col-avatar"></th>
+			<th class="col-overall">能力</th>
+			<th class="col-name">球员名</th>
+			<th class="col-age">年龄</th>
+			<th class="col-height">身高</th>
+			<th class="col-weight">体重</th>
+			<th class="col-action"></th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>
+				<input type="checkbox" name="player" class="player-check"/>
+			</td>
+			<td>
+				<a href="#" title="查看此位置所有球员" class="pos ss">SS</a>
+			</td>
+			<td>
+				<img src="images/messi.png" alt="Messi" class="list-avatar"/>
+			</td>
+			<td>
+				<span class="prop f95t109">99</span>
+			</td>
+			<td>
+				<a href="#" title="Lionel Messi" class="player-name">L. Messi</a>
+			</td>
+			<td>
+				<span class="player-age">26</span>
+			</td>
+			<td>
+				<span class="player-height">169cm</span>
+			</td>
+			<td>
+				<span class="player-weight">67kg</span>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="checkbox" name="player" class="player-check"/>
+			</td>
+			<td>
+				<a href="#" title="查看此位置所有球员" class="pos lwf">LWF</a>
+			</td>
+			<td>
+				<img src="images/cronaldo.png" alt="C.Ronaldo" class="list-avatar"/>
+			</td>
+			<td>
+				<span class="prop f95t109">99</span>
+			</td>
+			<td>
+				<a href="#" title="C. Ronaldo dos Santos Aveiro" class="player-name">Cristiano Ronaldo</a>
+			</td>
+			<td>
+				<span class="player-age">28</span>
+			</td>
+			<td>
+				<span class="player-height">185cm</span>
+			</td>
+			<td>
+				<span class="player-weight">80kg</span>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="checkbox" name="player" class="player-check"/>
+			</td>
+			<td>
+				<a href="#" title="查看此位置所有球员" class="pos cmf">CMF</a>
+			</td>
+			<td>
+				<img src="images/iniesta.png" alt="Iniesta" class="list-avatar"/>
+			</td>
+			<td>
+				<span class="prop f95t109">98</span>
+			</td>
+			<td>
+				<a href="#" title="Andrés Iniesta Luján" class="player-name">Iniesta</a>
+			</td>
+			<td>
+				<span class="player-age">29</span>
+			</td>
+			<td>
+				<span class="player-height">170cm</span>
+			</td>
+			<td>
+				<span class="player-weight">65kg</span>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="checkbox" name="player" class="player-check"/>
+			</td>
+			<td>
+				<a href="#" title="查看此位置所有球员" class="pos gk">GK</a>
+			</td>
+			<td>
+				<img src="images/buffon.png" alt="Buffon" class="list-avatar"/>
+			</td>
+			<td>
+				<span class="prop f95t109">97</span>
+			</td>
+			<td>
+				<a href="#" title="Gianluigi Buffon" class="player-name">G. Buffon</a>
+			</td>
+			<td>
+				<span class="player-age">35</span>
+			</td>
+			<td>
+				<span class="player-height">191cm</span>
+			</td>
+			<td>
+				<span class="player-weight">83kg</span>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="checkbox" name="player" class="player-check"/>
+			</td>
+			<td>
+				<a href="#" title="查看此位置所有球员" class="pos cmf">CMF</a>
+			</td>
+			<td>
+				<img src="images/xavi.png" alt="Xavi" class="list-avatar"/>
+			</td>
+			<td>
+				<span class="prop f95t109">97</span>
+			</td>
+			<td>
+				<a href="#" title="Xavier Hernández Creus" class="player-name">Xavi</a>
+			</td>
+			<td>
+				<span class="player-age">33</span>
+			</td>
+			<td>
+				<span class="player-height">170cm</span>
+			</td>
+			<td>
+				<span class="player-weight">68kg</span>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="checkbox" name="player" class="player-check"/>
+			</td>
+			<td>
+				<a href="#" title="查看此位置所有球员" class="pos ss">SS</a>
+			</td>
+			<td>
+				<img src="images/neymar.png" alt="Neymar" class="list-avatar"/>
+			</td>
+			<td>
+				<span class="prop f90t94">92</span>
+			</td>
+			<td>
+				<a href="#" title="Neymar da Silva Santos Jr." class="player-name">Neymar</a>
+			</td>
+			<td>
+				<span class="player-age">21</span>
+			</td>
+			<td>
+				<span class="player-height">175cm</span>
+			</td>
+			<td>
+				<span class="player-weight">64kg</span>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="checkbox" name="player" class="player-check"/>
+			</td>
+			<td>
+				<a href="#" title="查看此位置所有球员" class="pos amf">AMF</a>
+			</td>
+			<td>
+				<img src="images/oscar.png" alt="Oscar" class="list-avatar"/>
+			</td>
+			<td>
+				<span class="prop f80t89">85</span>
+			</td>
+			<td>
+				<a href="#" title="Oscar dos Santos Emboaba" class="player-name">Oscar</a>
+			</td>
+			<td>
+				<span class="player-age">21</span>
+			</td>
+			<td>
+				<span class="player-height">179cm</span>
+			</td>
+			<td>
+				<span class="player-weight">66kg</span>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="checkbox" name="player" class="player-check"/>
+			</td>
+			<td>
+				<a href="#" title="查看此位置所有球员" class="pos rmf">RMF</a>
+			</td>
+			<td>
+				<img src="images/lucas.png" alt="Lucas" class="list-avatar"/>
+			</td>
+			<td>
+				<span class="prop f80t89">85</span>
+			</td>
+			<td>
+				<a href="#" title="Lucas Rodrigues M. Silva" class="player-name">Lucas</a>
+			</td>
+			<td>
+				<span class="player-age">20</span>
+			</td>
+			<td>
+				<span class="player-height">172cm</span>
+			</td>
+			<td>
+				<span class="player-weight">66kg</span>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		</tbody>
+		<tfoot></tfoot>
+	</table>
+</article>
+<footer>
+	&copy; 2013 Powered by SoPES Maopy <br>
+	PES 2014 and all PES assets property of KONAMI.
+</footer>
+
+</body>
+</html>

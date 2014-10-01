@@ -41,10 +41,7 @@ textarea,
 th,
 td {
 	margin: 0;
-	padding: 0;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+	padding: 0
 }
 
 /** 边框 **/
@@ -165,10 +162,7 @@ hgroup,
 nav,
 section,
 summary {
-	display: block;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+	display: block
 }
 audio,
 canvas,

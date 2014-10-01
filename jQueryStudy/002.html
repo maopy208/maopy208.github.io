@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Home - Maopy</title>
+	<link rel="stylesheet" href="../css/reset.css"/>
+	<link rel="stylesheet" href="../css/layout.css"/>
+	<link rel="stylesheet" href="../css/typography.css"/>
+	<link rel="stylesheet" href="../css/blog.css"/>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+<header>
+	<div class="wrap">
+		<h1><a href="../index.html">MAOPY</a></h1>
+		<nav>
+			<ul>
+				<li><a href="../index.html">主页</a></li>
+				<li><a href="../blog.html">博客</a></li>
+				<li><a href="###">留言</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+<section id="main">
+	<artical>
+		<h1>002 生命——返回实例</h1>
+		<p>
+			当我们为jQuery添加了两个原型成员：jquery属性和size()方法之后，这个框架最基本的样子就孕育出来了。但是，该如何调用jquery属性和size()方法呢？
+		</p>
+		<p>
+			也许，你可以采用如下方法调用：
+		</p>
+<code>&lt;script&gt;
+  var my$ = new $();  //实例化
+  alert( my$.jquery );  //调用属性，返回”1.10.2”
+  alert( my$.size() );  //调用方法，返回undefined
+&lt;/script&gl;</code>
+		<p>
+			但是，jQuery不是这样调用的，它模仿类似下面的方法进行调用。
+		</p>
+<code>$().jquery;
+$().size();</code>
+		<p>
+			也就是说，jQuery没有使用new运算符将jQuery类实例化，而是直接调用jQuery()函数，然后在这个函数后面直接调用jQuery的原型方法，这是怎么实现的呢？
+		</p>
+		<p>
+			如果你模仿jQuery框架的用法执行下面的代码，浏览器会显示编译错误。这说明上面这个案例代码还不是真正的jQuery技术原型。
+		</p>
+<code>alert($().jquery);
+alert($().size());</code>
+		<p>
+			也就是说，我们应该把jQuery看做一个类，同时也应该把它视为一个普通函数，并让这个函数的返回值为jQuery类的实例。因此，下面这种结构模型才是正确的。
+		</p>
+<code>&lt;script>
+  var $ = jQuery = function () {
+    return new jQuery();  //返回类的实例
+  };
+  jQuery.fn = jQuery.prototype = {
+    jquery : "1.10.2",
+    size : function () {
+      return this.length;
+    }
+  }
+  alert($().jquery);
+  alert($().size());
+&lt;/script></code>
+		<p>
+			但是，如果在浏览器中预览，则会提示内存外溢，说明出现了死循环引用。
+		</p>
+		<p>
+			那么如何返回一个jQuery实例呢？
+		</p>
+		<p>
+			回忆一下，当使用var my$ = new $(); 创建jQuery类的实例时，this关键字就指向对象my$，因此my$实例对象就获得了jQuery.prototype包含的原型属性或方法，这些方法内的this关键字就会自动指向my$实例对象。换句话说，this关键字总是指向类的实例。
+		</p>
+		<p>
+			因此，我们可以这样尝试：在jQuery中使用一个工厂方法来创建一个实例，把这个方法放在jQuery.prototype原型对象中，然后在jQuery()函数中返回这个原型方法的调用。代码如下所示。
+		</p>
+<code>&lt;script>
+  var	$ = jQuery = function () {
+    return jQuery.fn.init();  //调用原型方法init()
+  };
+  jQuery.fn = jQuery.prototype = {
+    init : function () {  //在初始化原型方法中返回实例的引用
+      return this;
+    },
+    jquery : "1.10.2",  //原型属性
+    size : function () {  //原型方法
+      return this.length;
+    }
+  }
+  alert($().jquery);  //调用属性，返回”1.10.2”
+  alert($().size());  //调用方法，返回undefined
+&lt;/script></code>
+	</artical>
+</section>
+</body>
+</html>

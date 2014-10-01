@@ -210,3 +210,4 @@ MAOPY.prototype.extend = function (name, fn) {
 	MAOPY.prototype[name] = fn;
 };
 
+

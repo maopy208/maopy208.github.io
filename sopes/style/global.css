@@ -1,0 +1,311 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+body {
+	width: 1280px;
+	font-family: "Arial","微软雅黑";
+	font-size: 16px;
+	margin: 0 auto;
+	background: #ECF0F1;
+}
+ul {
+	list-style-type: none;
+}
+a {
+	color: #1ABC9C;
+	text-decoration: none;
+}
+table {
+	border-collapse: collapse;
+}
+select {
+	padding: 0;
+	height: 26px;
+	display: inline;
+	background: #ECF0F1;
+	border: 0;
+	vertical-align: middle;
+	outline: 0;
+}
+input[type="text"],
+textarea {
+	outline: 0;
+	padding: 2px;
+	line-height: 16px;
+	border: 0;
+	font-size: 1.05em;
+	background-color: #ECF0F1;
+}
+input.digital {
+	width: 45px;
+}
+.clearfix:after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.right {
+	float: right !important;
+}
+
+header#mainHeader {
+	height: 86px;
+	background: #1ABC9C;
+}
+#logo {
+	height: 66px;
+	margin: 10px 0 10px 20px;
+}
+header#mainHeader .lang-holder {
+	width: 200px;
+	height: 32px;
+	line-height: 32px;
+	background: #16A085;
+	color: #ECF0F1;
+	float: right;
+	margin: 16px 20px 0 0;
+	border: none;
+	position: relative;
+}
+header#mainHeader .lang-holder .lang-selector {
+	margin: 4px;
+}
+header#mainHeader .lang-holder ul.lang-options {
+	background: #16A085;
+	border-top: 1px solid #1ABC9C;
+	padding: 2px 0;
+	display: none;
+}
+header#mainHeader .lang-holder ul.lang-options a:hover {
+	color: #F1C40F;
+}
+header#mainHeader .lang-holder a {
+	color: #ECF0F1;
+	display: block;
+	margin: 4px;
+	line-height: 24px;
+	text-indent: 30px;
+	background: url("../images/lang-bg.gif") no-repeat left top;
+}
+header#mainHeader .lang-holder .lang-1 {
+	background-position: 0 -30px;
+}
+header#mainHeader .lang-holder .lang-2 {
+	background-position: 0 0;
+	z-index: 2;
+}
+header#mainHeader .lang-holder .lang-toggle {
+	background: url("../images/sprite.png") no-repeat 0 -150px;
+	width: 28px;
+	height: 28px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+header#mainHeader .lang-holder .lang-toggle:hover {
+	background-position: 0 -200px;
+}
+.lang-toggle-open {
+	background: url("../images/sprite.png") no-repeat 0 -52px !important;
+}
+.lang-toggle-open:hover {
+	background: url("../images/sprite.png") no-repeat 0 -102px !important;
+}
+
+nav {
+	height: 58px;
+	background: #34495E;
+	border-top: 1px solid #2C3E50;
+	border-bottom: 1px solid #2C3E50;
+}
+nav .menu-holder {
+	width: 300px;
+	height: 56px;
+	line-height: 56px;
+	background: #2C3E50;
+	color: #ECF0F1;
+	border: none;
+	float: left;
+	position: relative;
+}
+nav .menu-holder .menu-selector {
+	display: block;
+	font-size: 1.6em;
+	height: 50px;
+	line-height: 50px;
+	text-indent: 20px;
+	position: absolute;
+	top: 0;
+}
+nav .menu-holder ul.menu-options {
+	position: absolute;
+	top: 58px;
+	display: none;
+}
+nav .menu-holder ul.menu-options li {
+	background: #2C3E50;
+	border-top: 1px solid #34495E;
+	padding: 2px 0;
+}
+nav .menu-holder ul.menu-options li a {
+	display: block;
+	width: 292px;
+	text-indent: 6px;
+	position: relative;
+}
+nav .menu-holder ul.menu-options li a em {
+	font-size: smaller;
+	font-style: normal;
+	color: #999;
+	position: absolute;
+	right: 6px;
+}
+nav .menu-holder ul.menu-options a:hover {
+	color: #F1C40F;
+}
+nav .menu-holder a {
+	color: #ECF0F1;
+	display: block;
+	margin: 4px;
+	line-height: 24px;
+}
+nav .menu-holder .menu-1 {
+	background-position: 0 -30px;
+}
+nav .menu-holder .menu-2 {
+	background-position: 0 0;
+}
+nav .menu-holder .menu-toggle {
+	background: url("../images/sprite.png") no-repeat 0 -150px;
+	width: 28px;
+	height: 28px;
+	position: absolute;
+	right: 0;
+	top: 10px;
+}
+nav .menu-holder .menu-toggle:hover {
+	background-position: 0 -200px;
+}
+.menu-toggle-open {
+	background: url("../images/sprite.png") no-repeat 0 -52px !important;
+}
+.menu-toggle-open:hover {
+	background: url("../images/sprite.png") no-repeat 0 -102px !important;
+}
+nav ul.main-menu {
+	width: 500px;
+	height: 58px;
+	line-height: 58px;
+	float: left;
+}
+nav ul.main-menu li {
+	margin-left: 10px;
+	float: left;
+}
+nav ul.main-menu li a {
+	color: #ECF0F1;
+}
+nav ul.main-menu li a.current {
+	color: #1ABC9C;
+	font-size: 1.1em;
+}
+
+#playerSearchForm {
+	float: right;
+	margin: 15px 20px 15px 0;
+}
+#playerSearchForm input {
+	height: 28px;
+	line-height: 1.2em;
+	font-size: 1.1em;
+	border: 0;
+	background: #ECF0F1;
+	color: #999;
+	outline: 0;
+}
+#playerSearchForm .left-half {
+	-webkit-border-radius: 80px 0 0 80px;
+	-moz-border-radius: 80px 0 0 80px;
+	border-radius: 80px 0 0 80px;
+	width: 170px;
+	padding: 0 0 0 14px;
+}
+#playerSearchForm .right-half {
+	-webkit-border-radius: 0 80px 80px 0;
+	-moz-border-radius: 0 80px 80px 0;
+	border-radius: 0 80px 80px 0;
+	border-left: 1px solid #BDC3C7;
+	text-indent: -9999px;
+	width: 30px;
+	background: #ECF0F1 url("../images/sprite.png") no-repeat -120px -150px;
+	margin-left: -5px;
+	cursor: pointer;
+	z-index: 1;
+}
+
+footer {
+	width: 1280px;
+	height: 50px;
+	clear: both;
+	padding-top: 80px;
+}
+
+.f95t109 {
+	background: #c0392b;
+}
+.f90t94 {
+	background: #e74c3c;
+}
+.f80t89 {
+	background: #f1c40f;
+}
+.f75t79 {
+	background: #27ae60;
+}
+.f0t74 {
+	background: grey;
+}
+.ss, .cf, .lwf, .rwf {
+	background: #c0392b;
+}
+.amf, .cmf, .dmf, .rmf, .lmf {
+	background: #2ecc71;
+}
+.cb, .rb, .lb, .swp {
+	background: #2980b9;
+}
+.gk {
+	background: #f1c40f;
+}
+.main-pos {
+	color: yellow !important;
+}
+.poor-pos {
+	color: silver !important;
+}
+.pos {
+	text-align: center;
+	color: #ECF0F1;
+	height: 20px;
+	line-height: 18px;
+	padding: 1px 6px;
+	margin-left: 5px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+.prop {
+	font-weight: 700;
+	text-align: center;
+	color: #ECF0F1;
+	height: 20px;
+	line-height: 18px;
+	padding: 1px 6px;
+	margin-left: 5px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
